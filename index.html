@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)http://localhost/Pemweb/uas/pasar-lokal/index.php -->
+<html lang="id"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>SirKel</title>
+    <link href="./index_files/bootstrap.min.css" rel="stylesheet">
+    <link href="./index_files/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./index_files/leaflet.css">
+    <link rel="stylesheet" href="./index_files/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="container d-flex align-items-center justify-content-between">
+    <a href="http://localhost/Pemweb/uas/pasar-lokal/index.php" class="brand">🌿 PasarLokal</a>
+    <div class="d-flex align-items-center gap-2">
+                    <a href="http://localhost/Pemweb/uas/pasar-lokal/auth/login.php" class="nav-btn">Masuk</a>
+              <a href="http://localhost/Pemweb/uas/pasar-lokal/auth/register.php" class="nav-btn fill">Daftar</a>
+                          </div>
+          </div>
+        </nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-7">
+        <h1>Belanja dari<br>UMKM Terdekat 📍</h1>
+        <p>Temukan produk lokal berkualitas di sekitar Anda.<br>Dukung penjual lokal, hemat ongkir!</p>
+      </div>
+      <div class="col-md-5 text-md-end mt-3 mt-md-0">
+        <div style="background:rgba(255,255,255,.15);border-radius:14px;padding:16px 20px;display:inline-block;text-align:left;">
+          <div style="font-size:.8rem;color:rgba(255,255,255,.7);margin-bottom:4px;">Toko aktif saat ini</div>
+          <div style="font-size:2rem;font-weight:700;">2 Toko</div>
+          <div style="font-size:.8rem;color:rgba(255,255,255,.7);">Siap melayani Anda</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GPS PANEL -->
+<div class="container">
+  <div class="gps-panel">
+    <div class="d-flex align-items-center justify-content-between flex-wrap gap-3">
+      <div>
+        <div style="font-weight:700;font-size:1rem;margin-bottom:4px;">
+          📍 Lokasi &amp; Radius Pencarian
+        </div>
+        <div id="gpsStatus" style="font-size:.83rem;color:#6b7280;"><span class="status-dot dot-ok"></span>Lokasi terdeteksi: -6.32911, 107.30317</div>
+      </div>
+      <div class="d-flex gap-2 flex-wrap">
+        <button class="radius-btn active" onclick="setRadius(1)" data-r="1">1 km</button>
+        <button class="radius-btn" onclick="setRadius(3)" data-r="3">3 km</button>
+        <button class="radius-btn" onclick="setRadius(5)" data-r="5">5 km</button>
+        <button class="radius-btn" onclick="setRadius(10)" data-r="10">10 km</button>
+        <button class="radius-btn" onclick="setRadius(999)" data-r="999">Semua</button>
+      </div>
+    </div>
+
+    <!-- PETA -->
+    <div id="map" class="leaflet-container leaflet-touch leaflet-retina leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0" style="position: relative;"><div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);"><div class="leaflet-pane leaflet-tile-pane"><div class="leaflet-layer " style="z-index: 1; opacity: 1;"><div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 18; transform: translate3d(0px, 0px, 0px) scale(1);"><img alt="" src="./index_files/8480.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(499px, 37px, 0px); opacity: 1;"><img alt="" src="./index_files/8479.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(499px, -219px, 0px); opacity: 1;"><img alt="" src="./index_files/8480(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(243px, 37px, 0px); opacity: 1;"><img alt="" src="./index_files/8480(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(755px, 37px, 0px); opacity: 1;"><img alt="" src="./index_files/8481.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(499px, 293px, 0px); opacity: 1;"><img alt="" src="./index_files/8479(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(243px, -219px, 0px); opacity: 1;"><img alt="" src="./index_files/8479(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(755px, -219px, 0px); opacity: 1;"><img alt="" src="./index_files/8481(1).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(243px, 293px, 0px); opacity: 1;"><img alt="" src="./index_files/8481(2).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(755px, 293px, 0px); opacity: 1;"><img alt="" src="./index_files/8480(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-13px, 37px, 0px); opacity: 1;"><img alt="" src="./index_files/8480(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1011px, 37px, 0px); opacity: 1;"><img alt="" src="./index_files/8479(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-13px, -219px, 0px); opacity: 1;"><img alt="" src="./index_files/8479(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1011px, -219px, 0px); opacity: 1;"><img alt="" src="./index_files/8481(3).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-13px, 293px, 0px); opacity: 1;"><img alt="" src="./index_files/8481(4).png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(1011px, 293px, 0px); opacity: 1;"></div></div></div><div class="leaflet-pane leaflet-overlay-pane"><svg pointer-events="none" class="leaflet-zoom-animated" width="1495" height="478" viewBox="-125 -40 1495 478" style="transform: translate3d(-125px, -40px, 0px);"><g><path class="leaflet-interactive" stroke="#16a34a" stroke-opacity="1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="#16a34a" fill-opacity="0.07" fill-rule="evenodd" d="M518.4896369776689,198.88730920944363a105,105 0 1,0 210,0 a105,105 0 1,0 -210,0 "></path></g></svg></div><div class="leaflet-pane leaflet-shadow-pane"></div><div class="leaflet-pane leaflet-marker-pane"><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -8px; margin-top: -8px; width: 16px; height: 16px; transform: translate3d(623px, 199px, 0px); z-index: 199;"><div style="background:#3b82f6;border:3px solid #fff;border-radius:50%;width:16px;height:16px;box-shadow:0 0 0 4px rgba(59,130,246,.3);"></div></div><div class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" tabindex="0" role="button" style="margin-left: -18px; margin-top: -18px; width: 36px; height: 36px; transform: translate3d(623px, 199px, 0px); z-index: 199;"><div style="background:#16a34a;color:#fff;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3);">🍜</div></div></div><div class="leaflet-pane leaflet-tooltip-pane"></div><div class="leaflet-pane leaflet-popup-pane"><div class="leaflet-popup  leaflet-zoom-animated" style="opacity: 1; transform: translate3d(623px, 199px, 0px); bottom: -7px; left: -71px;"><div class="leaflet-popup-content-wrapper"><div class="leaflet-popup-content" style="width: 95px;">📍 Lokasi Anda</div></div><div class="leaflet-popup-tip-container"><div class="leaflet-popup-tip"></div></div><a class="leaflet-popup-close-button" role="button" aria-label="Close popup" href="http://localhost/Pemweb/uas/pasar-lokal/index.php#close"><span aria-hidden="true">×</span></a></div></div><div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(3.34732e+06px, 2.17104e+06px, 0px) scale(8192);"></div></div><div class="leaflet-control-container"><div class="leaflet-top leaflet-left"><div class="leaflet-control-zoom leaflet-bar leaflet-control"><a class="leaflet-control-zoom-in" href="http://localhost/Pemweb/uas/pasar-lokal/index.php#" title="Zoom in" role="button" aria-label="Zoom in" aria-disabled="false"><span aria-hidden="true">+</span></a><a class="leaflet-control-zoom-out" href="http://localhost/Pemweb/uas/pasar-lokal/index.php#" title="Zoom out" role="button" aria-label="Zoom out" aria-disabled="false"><span aria-hidden="true">−</span></a></div></div><div class="leaflet-top leaflet-right"></div><div class="leaflet-bottom leaflet-left"></div><div class="leaflet-bottom leaflet-right"><div class="leaflet-control-attribution leaflet-control"><a href="https://leafletjs.com/" title="A JavaScript library for interactive maps"><svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="8" viewBox="0 0 12 8" class="leaflet-attribution-flag"><path fill="#4C7BE1" d="M0 0h12v4H0z"></path><path fill="#FFD500" d="M0 4h12v3H0z"></path><path fill="#E0BC00" d="M0 7h12v1H0z"></path></svg> Leaflet</a> <span aria-hidden="true">|</span> © OpenStreetMap contributors</div></div></div></div>
+
+    <!-- Filter kategori -->
+    <div class="d-flex gap-2 flex-wrap mt-3">
+      <button class="kat-btn active" data-k="semua" onclick="filterKat(&#39;semua&#39;,this)">Semua</button>
+            <button class="kat-btn" data-k="makanan" onclick="filterKat(&#39;makanan&#39;,this)">
+        🍜 Makanan      </button>
+            <button class="kat-btn" data-k="fashion" onclick="filterKat(&#39;fashion&#39;,this)">
+        👗 Fashion      </button>
+            <button class="kat-btn" data-k="elektronik" onclick="filterKat(&#39;elektronik&#39;,this)">
+        💻 Elektronik      </button>
+            <button class="kat-btn" data-k="pertanian" onclick="filterKat(&#39;pertanian&#39;,this)">
+        🌾 Pertanian      </button>
+            <button class="kat-btn" data-k="kerajinan" onclick="filterKat(&#39;kerajinan&#39;,this)">
+        🎨 Kerajinan      </button>
+            <button class="kat-btn" data-k="jasa" onclick="filterKat(&#39;jasa&#39;,this)">
+        🔧 Jasa      </button>
+            <button class="kat-btn" data-k="lainnya" onclick="filterKat(&#39;lainnya&#39;,this)">
+        🏪 Lainnya      </button>
+          </div>
+  </div>
+
+  <!-- HASIL TOKO -->
+  <div id="hasilLabel" class="section-title">🏪 1 Toko dalam 1 km</div>
+  <div class="row g-4" id="tokoGrid">
+            <div class="col-md-6 col-lg-4">
+              <div class="toko-card">
+                <div class="toko-header">
+                  <div class="toko-icon">🍜</div>
+                  <div class="flex-grow-1">
+                    <div class="toko-nama">Warung Bu Sari</div>
+                    <div class="d-flex align-items-center gap-2 mt-1">
+                      <span class="badge-kat">makanan</span>
+                      <span class="jarak-label">0m</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="toko-body">
+                  <div style="font-size:.82rem;color:#6b7280;margin-bottom:10px;">
+                    📍 Jl. Margonda Raya No. 45, Beji, Depok
+                  </div>
+                  <div style="font-size:.82rem;color:#374151;margin-bottom:12px;">Masakan rumahan, nasi uduk, lauk pauk segar tiap hari</div>
+                  <div style="font-size:.78rem;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">3 Produk</div>
+                  <button onclick="window.open(&#39;https://wa.me/6281234567890?text=Halo+Warung%20Bu%20Sari%2C+saya+tertarik+dengan+produk+Anda&#39;,&#39;_blank&#39;)" class="btn-wa"><i class="fa-brands fa-whatsapp me-1"></i>Chat via WhatsApp</button>
+                  <a href="http://localhost/Pemweb/uas/pasar-lokal/toko/detail.php?id=1" class="btn-detail">Lihat Produk Lengkap →</a>
+                </div>
+              </div>
+            </div></div>
+  <div id="emptyState" class="empty-state" style="display:none;">
+    <div class="ico">🔍</div>
+    <h5>Tidak ada toko ditemukan</h5>
+    <p>Coba perbesar radius atau ganti kategori</p>
+  </div>
+</div>
+
+<!-- CTA PENJUAL -->
+<div style="background:linear-gradient(135deg,#f0fdf4,#dcfce7);margin-top:60px;padding:60px 0;">
+  <div class="container text-center">
+    <h2 style="font-weight:700;color:#166534;">Punya Usaha Lokal? 🏪</h2>
+    <p style="color:#4b7a57;margin:12px 0 24px;">Daftarkan toko Anda dan jangkau pembeli di sekitar Anda secara gratis!</p>
+        <a href="http://localhost/Pemweb/uas/pasar-lokal/auth/register.php" class="btn" style="background:#16a34a;color:#fff;border-radius:12px;padding:14px 36px;font-weight:700;font-size:1rem;">
+      Daftar Gratis Sekarang
+    </a>
+      </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="brand-f mb-2">🌿 PasarLokal</div>
+        <p style="font-size:.85rem;">Platform digital untuk UMKM lokal agar mudah ditemukan pembeli di sekitarnya.</p>
+      </div>
+      <div class="col-md-4">
+        <h6 style="color:#fff;font-weight:600;">Untuk Penjual</h6>
+        <ul style="list-style:none;padding:0;font-size:.85rem;">
+          <li><a href="http://localhost/Pemweb/uas/pasar-lokal/auth/register.php" style="color:rgba(255,255,255,.6);text-decoration:none;">Daftar Toko Gratis</a></li>
+          <li><a href="http://localhost/Pemweb/uas/pasar-lokal/auth/login.php" style="color:rgba(255,255,255,.6);text-decoration:none;">Kelola Produk</a></li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h6 style="color:#fff;font-weight:600;">Tentang</h6>
+        <p style="font-size:.85rem;">Tugas UAS Pemrograman Berbasis Web — Marketplace Hyperlokal berbasis GPS.</p>
+      </div>
+    </div>
+    <hr style="border-color:rgba(255,255,255,.1);margin-top:28px;">
+    <p class="text-center mb-0" style="font-size:.8rem;">© 2024 PasarLokal · Mendukung UMKM Lokal Indonesia</p>
+  </div>
+</footer>
+
+<script src="./index_files/bootstrap.bundle.min.js.download"></script>
+<script src="./index_files/leaflet.js.download"></script>
+<script>
+// ── Data toko dari PHP ──
+const semuaToko = [{"id":"2","user_id":"3","nama_toko":"Batik Pak Budi","deskripsi":"Batik tulis dan cap motif Jawa, harga langsung pengrajin","alamat":"Jl. Nusantara No. 12","kota":"Depok","kecamatan":"Pancoran Mas","latitude":"-6.40250000","longitude":"106.81950000","kategori":"fashion","foto":null,"status":"aktif","catatan_admin":null,"created_at":"2026-04-18 11:52:57","nama_penjual":"Pak Budi","telepon":"082345678901","jumlah_produk":"2"},{"id":"1","user_id":"2","nama_toko":"Warung Bu Sari","deskripsi":"Masakan rumahan, nasi uduk, lauk pauk segar tiap hari","alamat":"Jl. Margonda Raya No. 45","kota":"Depok","kecamatan":"Beji","latitude":"-6.32910890","longitude":"107.30316550","kategori":"makanan","foto":null,"status":"aktif","catatan_admin":null,"created_at":"2026-04-18 11:52:57","nama_penjual":"Ibu Sari","telepon":"081234567890","jumlah_produk":"3"}];
+const ikonKat = {makanan:'🍜',fashion:'👗',elektronik:'💻',pertanian:'🌾',kerajinan:'🎨',jasa:'🔧',lainnya:'🏪'};
+
+let userLat = null, userLon = null;
+let radiusKm = 1;
+let katFilter = 'semua';
+let map, userMarker, radiusCircle, tokoMarkers = [];
+
+// ── Init Leaflet ──
+map = L.map('map').setView([-6.2, 106.816], 12);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+// ── GPS ──
+function setRadius(r) {
+    radiusKm = r;
+    document.querySelectorAll('.radius-btn').forEach(b => {
+        b.classList.toggle('active', parseInt(b.dataset.r) === r || (r===999 && b.dataset.r==='999'));
+    });
+    if (radiusCircle) { map.removeLayer(radiusCircle); radiusCircle = null; }
+    if (userLat && r !== 999) {
+        radiusCircle = L.circle([userLat, userLon], {
+            radius: r * 1000,
+            color: '#16a34a', fillColor: '#16a34a', fillOpacity: 0.07, weight: 2
+        }).addTo(map);
+    }
+    tampilkanToko();
+}
+
+function filterKat(k, el) {
+    katFilter = k;
+    document.querySelectorAll('.kat-btn').forEach(b => b.classList.remove('active'));
+    el.classList.add('active');
+    tampilkanToko();
+}
+
+// ── Haversine JS ──
+function jarak(lat1, lon1, lat2, lon2) {
+    const R = 6371, dL = (lat2-lat1)*Math.PI/180, dO = (lon2-lon1)*Math.PI/180;
+    const a = Math.sin(dL/2)**2 + Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dO/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+}
+
+function tampilkanToko() {
+    // Hapus marker lama
+    tokoMarkers.forEach(m => map.removeLayer(m));
+    tokoMarkers = [];
+
+    const grid  = document.getElementById('tokoGrid');
+    const empty = document.getElementById('emptyState');
+    const label = document.getElementById('hasilLabel');
+    grid.innerHTML = '';
+
+    let filtered = semuaToko.filter(t => {
+        if (katFilter !== 'semua' && t.kategori !== katFilter) return false;
+        if (userLat && radiusKm !== 999) {
+            t._jarak = jarak(userLat, userLon, parseFloat(t.latitude), parseFloat(t.longitude));
+            return t._jarak <= radiusKm;
+        }
+        t._jarak = userLat ? jarak(userLat, userLon, parseFloat(t.latitude), parseFloat(t.longitude)) : null;
+        return true;
+    });
+
+    if (userLat) filtered.sort((a,b) => (a._jarak||999) - (b._jarak||999));
+
+    label.textContent = userLat
+        ? `🏪 ${filtered.length} Toko dalam ${radiusKm === 999 ? 'semua' : radiusKm + ' km'}`
+        : `🏪 Semua Toko (${filtered.length})`;
+
+    if (!filtered.length) {
+        empty.style.display = 'block';
+    } else {
+        empty.style.display = 'none';
+        filtered.forEach(t => {
+            // Map marker
+            const ikon = L.divIcon({
+                html: `<div style="background:#16a34a;color:#fff;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;border:3px solid #fff;box-shadow:0 2px 8px rgba(0,0,0,.3);">${ikonKat[t.kategori]||'🏪'}</div>`,
+                iconSize: [36,36], iconAnchor: [18,18], className:''
+            });
+            const m = L.marker([parseFloat(t.latitude), parseFloat(t.longitude)], {icon: ikon})
+                .addTo(map)
+                .bindPopup(`<strong>${t.nama_toko}</strong><br>${t.alamat}<br><a href="toko/detail.php?id=${t.id}" style="color:#16a34a;font-weight:600;">Lihat Toko →</a>`);
+            tokoMarkers.push(m);
+
+            // Card
+            const jarakHtml = t._jarak !== null
+                ? `<span class="jarak-label">${t._jarak < 1 ? Math.round(t._jarak*1000)+'m' : t._jarak.toFixed(1)+'km'}</span>`
+                : '';
+            const waLink = t.telepon
+                ? `https://wa.me/${t.telepon.replace(/^0/,'62').replace(/\D/,'')}?text=Halo+${encodeURIComponent(t.nama_toko)}%2C+saya+tertarik+dengan+produk+Anda`
+                : '#';
+
+            grid.innerHTML += `
+            <div class="col-md-6 col-lg-4">
+              <div class="toko-card">
+                <div class="toko-header">
+                  <div class="toko-icon">${ikonKat[t.kategori]||'🏪'}</div>
+                  <div class="flex-grow-1">
+                    <div class="toko-nama">${t.nama_toko}</div>
+                    <div class="d-flex align-items-center gap-2 mt-1">
+                      <span class="badge-kat">${t.kategori}</span>
+                      ${jarakHtml}
+                    </div>
+                  </div>
+                </div>
+                <div class="toko-body">
+                  <div style="font-size:.82rem;color:#6b7280;margin-bottom:10px;">
+                    📍 ${t.alamat}${t.kecamatan ? ', '+t.kecamatan : ''}, ${t.kota}
+                  </div>
+                  <div style="font-size:.82rem;color:#374151;margin-bottom:12px;">${t.deskripsi||'—'}</div>
+                  <div style="font-size:.78rem;font-weight:600;color:#9ca3af;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px;">${t.jumlah_produk} Produk</div>
+                  ${t.telepon ? `<button onclick="window.open('${waLink}','_blank')" class="btn-wa"><i class="fa-brands fa-whatsapp me-1"></i>Chat via WhatsApp</button>` : ''}
+                  <a href="toko/detail.php?id=${t.id}" class="btn-detail">Lihat Produk Lengkap →</a>
+                </div>
+              </div>
+            </div>`;
+        });
+    }
+}
+
+// ── Minta GPS ──
+document.getElementById('gpsStatus').innerHTML = '<span class="status-dot dot-wait"></span>Meminta izin lokasi...';
+if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+        pos => {
+            userLat = pos.coords.latitude;
+            userLon = pos.coords.longitude;
+            document.getElementById('gpsStatus').innerHTML =
+                `<span class="status-dot dot-ok"></span>Lokasi terdeteksi: ${userLat.toFixed(5)}, ${userLon.toFixed(5)}`;
+
+            userMarker = L.marker([userLat, userLon], {
+                icon: L.divIcon({
+                    html:'<div style="background:#3b82f6;border:3px solid #fff;border-radius:50%;width:16px;height:16px;box-shadow:0 0 0 4px rgba(59,130,246,.3);"></div>',
+                    iconSize:[16,16], iconAnchor:[8,8], className:''
+                })
+            }).addTo(map).bindPopup('📍 Lokasi Anda').openPopup();
+
+            map.setView([userLat, userLon], 14);
+            setRadius(radiusKm);
+        },
+        err => {
+            document.getElementById('gpsStatus').innerHTML =
+                '<span class="status-dot dot-err"></span>Lokasi tidak bisa diakses — menampilkan semua toko';
+            tampilkanToko();
+        },
+        { enableHighAccuracy: true, timeout: 10000 }
+    );
+} else {
+    document.getElementById('gpsStatus').innerHTML =
+        '<span class="status-dot dot-err"></span>Browser tidak mendukung GPS';
+    tampilkanToko();
+}
+</script>
+
+</body></html>
