@@ -1,0 +1,7 @@
+[build]
+  publish = "." # Folder utama yang diupload
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/api"
+  status = 200
